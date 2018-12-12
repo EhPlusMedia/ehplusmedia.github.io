@@ -8,7 +8,7 @@ if (!$_POST)
 /* ------------------------------------
  * just replace email address with your email address
   --------------------------------------------- */
-$address = "starxpeed@gmail.com";
+$address = "ehplusmedia@gmail.com";
 
 // Email address verification, do not edit this part.
 function isEmail($email) {
