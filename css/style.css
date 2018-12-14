@@ -6,6 +6,97 @@ html,
 /*==========================================
 Gallary Start
 ==========================================*/
+
+
+/* 3.1.4. Projects */
+
+.projects .project-filters > li a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+.projects .project-filters > li a.active {
+  color: #cd201f;
+}
+.projects .project-filters > li a:hover {
+  color: #666;
+}
+.projects .project {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.projects .project.inactive {
+  opacity: 0.3;
+}
+.projects .project:hover {
+  opacity: 1;
+}
+.projects .project .project-thumb img {
+  width: 100%;
+  height: auto;
+}
+.projects .project .project-overlay {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 14px;
+  text-align: center;
+  background-color: #000;
+  opacity: 0;
+}
+.projects .project .project-overlay .project-links {
+  width: 90%;
+  height: 44px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.projects .project .project-overlay a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.projects .project .project-overlay a i.fa {
+  line-height: 36px;
+}
+.projects .project .project-overlay a:hover {
+  color: #cd201f;
+  border-color: #cd201f;
+}
+.projects .project .project-gallery {
+  display: none;
+}
+.projects .project .project-info {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
 div.gallery {
     border: 1px solid #ccc;
 }
@@ -217,8 +308,7 @@ h6 {
   margin-bottom: .9rem;
 }
 p {
-  line-height: 1.5rem;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
 }
 p:last-child {
   margin-bottom: 20px;
@@ -265,8 +355,6 @@ p:last-child {
 Section
 */
 .sections {
-  padding-top: 50px;
-  padding-bottom: 50px;
   position: relative;
   overflow: hidden;
 }
@@ -1376,18 +1464,16 @@ Describe section
   overflow: hidden;
 }
 .describe-list-content h5 {
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   font-weight: bold;
 }
 .describe-list-content p {
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 .describe-images {
   margin-top: 40px;
 }
-.describe-list {
-  margin-top: 3rem;
-}
+
 .describe-list li {
   margin-top: 2rem;
 }
