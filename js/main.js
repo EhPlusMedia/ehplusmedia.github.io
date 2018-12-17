@@ -10,7 +10,7 @@
 var preLoader = false; // If you like to hide your menu set true
 
 //MENU HIDE
-var hide_menu = true; // If you like to hide your menu set true
+var hide_menu = false; // If you like to hide your menu set true
 
 // TWITTER ID
 var wowAnimation = true;  //
