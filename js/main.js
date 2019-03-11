@@ -47,71 +47,6 @@ jQuery(document).ready(function ($) {
 
 
 
-    /*---------------------------------------------*
-     * STICKY HIDE NAVIGATION 
-     ---------------------------------------------*/
-
-    var windowWidth = $(window).width();
-    if (windowWidth > 767) {
-
-        if (hide_menu === true) {
-            $('.navbar').addClass('hide-nav').hide();
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 200) {
-                    $('.hide-nav').fadeIn(500);
-                    $('.hide-nav').addClass('navbar');
-
-                } else {
-                    $('.hide-nav').fadeOut(500);
-                    $('.hide-nav').removeClass('navbar');
-                }
-            });
-        }
-    }
-    if (windowWidth < 719) {
-        jQuery('.navbar-collapse a').click(function (e) {
-            jQuery('.navbar-collapse').collapse('toggle');
-        });
-    }
-
-
-
-
-    /*---------------------------------------------*
-     * STICKY TRANSPARENT NAVIGATION 
-     ---------------------------------------------*/
-
-    $.localScroll();
-
-
-
-    /*---------------------------------------------*
-     * STICKY TRANSPARENT NAVIGATION 
-     ---------------------------------------------*/
-
-    function toggleChevron(e) {
-        $(e.target)
-                .prev('.panel-heading')
-                .find("i.indicator")
-                .toggleClass('glyphicon-minus glyphicon-plus');
-    }
-    $('.panel-group').on('hidden.bs.collapse', toggleChevron);
-    $('.panel-group').on('shown.bs.collapse', toggleChevron);
-
-
-
-
-    /*---------------------------------------------*
-     * Counter 
-     ---------------------------------------------*/
-
-    $('.statistic-counter').counterUp({
-        delay: 10,
-        time: 2000
-    });
-
-
-
 
     /* ---------------------------------------------------------------------
      Carousel
@@ -180,51 +115,7 @@ jQuery(document).ready(function ($) {
 
 
 
-    /*---------------------------------------------*
-     * Twitter
-     ---------------------------------------------*/
-
-
-    var xs_tweet = {
-        "id": twitterID,
-        "maxTweets": 3, // maxx post will show 3
-        "domId": 'tweet',
-        "enableLinks": true,
-        "showUser": true,
-        "showTime": true,
-        "dateFunction": '',
-        "showRetweet": false,
-        "customCallback": handleTweets,
-        "showInteraction": false
-    };
-    function handleTweets(tweets) {
-        var x = tweets.length;
-        var n = 0;
-        var element = document.getElementById('tweet');
-        var html = '<div class="slides">';
-        while (n < x) {
-            html += '<div>' + tweets[n] + '</div>';
-            n++;
-        }
-        html += '</div>';
-        if ($('#tweet').length) {
-            element.innerHTML = html;
-        }
-        /* Twits attached to owl-carousel */
-        $("#tweet .slides").owlCarousel({
-            responsiveClass: true,
-            autoplay: false,
-            items: 1
-        });
-
-    }
-    if (self == top) { // its load with iframe or not
-        twitterFetcher.fetch(xs_tweet);
-    }
-
-
-
-
+    
 
 
     /* ------------------------------------------------
@@ -247,28 +138,6 @@ jQuery(document).ready(function ($) {
         }
     }
 
-    /*---------------------------------------------*
-     * Countdown
-     ---------------------------------------------*/
-    $('.countdown').each(function () {
-        $(this).countdown({
-            until: new Date($(this).attr('data-date'))
-        });
-    });
-    
-    
-    /*---------------------------------------------*
-     * Map
-     ---------------------------------------------*/
-    $('.map-wrapper iframe').each(function (i, iframe) {
-        $(iframe).parent().hover(// make inactive on hover
-                function () {
-                    $(iframe).css('pointer-events', 'none');
-                }).click(// activate on click
-                function () {
-                    $(iframe).css('pointer-events', 'auto');
-                }).trigger('mouseover'); // make it inactive by default as well
-    });
 
 
 
